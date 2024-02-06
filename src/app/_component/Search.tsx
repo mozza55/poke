@@ -1,14 +1,19 @@
 'use client';
 
 import { searchState } from '@/store/searchContext';
+import { useQueryClient } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 
 const Search = () => {
   const [search, setSearch] = useRecoilState(searchState);
   const [input, setInput] = useState('');
+  const queryClient = useQueryClient();
   
   const updateSearch = () => {
+    if(input === search) {
+      queryClient.refetchQueries({queryKey: ['getPokemonList', search]});
+    }
     setSearch(input);
   };
 
