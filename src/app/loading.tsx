@@ -1,4 +1,4 @@
-import Search from './_component/Search';
+import Search from './_components/Search';
 
 export default function Loading() {
   return (

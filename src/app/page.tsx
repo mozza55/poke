@@ -1,7 +1,7 @@
 import { api } from '@/api/axios';
 import { PokeAPI } from 'pokeapi-types';
-import PokemonList from './_component/PokemonList';
-import Search from './_component/Search';
+import PokemonList from './_components/PokemonList';
+import Search from './_components/Search';
 import { getPokemon } from '@/api/pokemon';
 
 // 초기 데이터 캐싱
