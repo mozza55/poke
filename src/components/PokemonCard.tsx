@@ -7,6 +7,7 @@ const PokemonCard = ({ id, name, img, types }: Pokemon) => {
   return (
     <Link
       href={`/pokemon/${id}`}
+      prefetch={true}
       className="min-w-fit flex-1 flex flex-col gap-2 rounded-lg border border-slate-500 p-4"
     >
       <Image className="self-center" alt={`${name} 이미지`} src={img} width={200} height={200} />
@@ -23,4 +24,4 @@ const PokemonCard = ({ id, name, img, types }: Pokemon) => {
   );
 };
 
-export default PokemonCard;
+export default React.memo(PokemonCard);
